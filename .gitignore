@@ -1,0 +1,5 @@
+consumer/__pycache__
+consumer/data/*
+consumer/model/*
+producer/data/*
+.vscode/*

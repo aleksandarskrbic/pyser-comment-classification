@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  producer:
+    build: ./producer
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      COMMENTS_TOPIC: stream.comments
+      COMMENTS_PER_SECOND: 1
+
+  consumer:
+    build: ./consumer
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      COMMENTS_TOPIC: stream.comments
+
+networks:
+  default:
+    external:
+      name: kafka-network
