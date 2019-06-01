@@ -9,6 +9,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
 from utils import clean
 
+
 CLASSES = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
 TEXT = 'comment_text'
 
@@ -34,7 +35,7 @@ class TrainingTask():
             strip_accents='unicode',
             analyzer='word',
             token_pattern=r'\w{1,}',
-            ngram_range=(1, 2),
+            ngram_range=(1, 1),
             max_features=15000)
         self._word_vectorizer.fit(self._train_data[TEXT])
         self._train_word_features = self._word_vectorizer.transform(self._train_data[TEXT])

@@ -24,11 +24,9 @@ class Classifier():
         vectorized_comment = self._vectorizer.transform([comment])
 
         predictions = {}
-        predictions['comment'] = comment
-        predictions['predictions'] = {}
         for class_name, model in self._models:
             prediction = model.predict_proba(vectorized_comment)[0][1]
             prediction = math.floor(prediction*100) / 100
-            predictions['predictions'][class_name] = prediction
+            predictions[class_name] = prediction
 
         return predictions

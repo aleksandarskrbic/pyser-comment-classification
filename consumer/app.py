@@ -16,7 +16,13 @@ classifer = Classifier()
 async def classify_comments(events):
     async for event in events:
         pred = classifer.predict(event.comment)
-        print(pred)
+        result = {
+            'user_id': event.user_id,
+            'comment': event.comment,
+            'datetime':event.datetime,
+            'data': pred
+        }
+        print(result)
 
 
 if __name__ == '__main__':

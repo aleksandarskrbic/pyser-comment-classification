@@ -3,6 +3,7 @@ import datetime
 import pandas as pd
 from faker import Faker
 
+
 CLASSES = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
 TEXT = 'comment_text'
 
@@ -24,4 +25,3 @@ def generate_event(faker: Faker, comment: str) -> dict:
         'datetime': str(datetime.datetime.utcnow()),
         'comment': comment
     }
-
