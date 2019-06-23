@@ -1,4 +1,4 @@
-# Text classification and real-time analysis
+# Real-time analysis text classification
 
 ### 1. Train text classifier
 - Download dataset from https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data
